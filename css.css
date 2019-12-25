@@ -1,0 +1,265 @@
+ *{
+ 	padding: 0;
+ 	margin: 0;
+
+ }
+body{
+    background:rgba(0,0,0,0.25);
+  }
+.lend{
+    background-image:url("image1/travel.png"); 
+	height:198px;
+	text-align:center;
+    margin:0 auto;
+   padding-top: 30px;
+   padding-left: 160px;
+}
+.lent1>li{
+	position: relative;
+	top:175px;
+	float:left;
+	width: 220px;
+	height: 20px;
+	background-color: #ccc;
+	margin: 0 10px;
+	border-radius: 50%;
+}
+.fix{
+	opacity:0.8;
+	width:40px;
+	height:40px;
+	text-align: center;
+	position:fixed;
+    right:0;
+    top:330px;
+    background-color:black;
+}
+.lent>li,a{
+   text-decoration:none; 
+}
+.lent>li,a:link{
+   color:#ff0000;
+}
+.lent>li,a:visited{
+   color:black;
+}
+.lent>li,a:hover{
+   color:#ff00ff;
+}
+.lent>li,a:active{
+   color:#0000ff;
+}
+
+ul,li{
+	list-style: none;
+}
+.bigbox{
+    width:1300px;
+	height:600px;
+	position: relative;
+	margin: 30px auto;
+}
+
+.text{
+	
+	margin: 0 auto;
+	height: 26px;
+	margin-bottom: 0px;
+	background:rgba(0,0,255,0.15);
+
+	/*background-color: #98FB98;*/
+	color:red;
+	overflow: hidden;
+}
+ .box{
+       	width:1200px; 
+       	 height: 600px;
+       	 border: 1px solid none;
+       	 margin: 80px auto;
+       	 position: relative;
+       	 overflow: hidden; 
+       }
+ .slider{
+ 	width: 8400px;
+ 	position:absolute;
+ 	left: -1200px;
+ }
+ .slide{
+ 	width: 1200px;
+ 	overflow: hidden;
+ 	float: left;
+ }
+ .box>span{
+ 	display: block;
+ 	width: 30px;
+ 	height: 50px;
+ 	text-align: center;
+ 	cursor:pointer;
+ 	color:;
+ 	top: 300px;
+ 	line-height: 50px;
+ 	background: rgb(255,0,0);
+ 	font-size: 30px;
+ 	position: absolute;
+ 	opacity: 0;
+ }
+.nav>li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-color: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+	text-align: center;
+}
+.nav .active{
+	background: red;
+}
+#left{
+	left:30px;
+}
+#right{
+
+	right:30px;
+}
+.nav{
+	position: absolute;
+	left:500px;
+	bottom:20px;
+}
+#word{
+    text-align: center;
+    position: absolute;
+	width:1200px;
+	height:26px;
+	text-align: left;
+	margin-bottom: 0px;
+	color:red;
+	left: 800px;
+}
+.word1{
+	overflow: hidden;
+    position: relative;
+	margin: 0 auto;
+	width:980px;
+	height:26px;
+}
+#laba{
+	
+	 position: absolute;
+     left:240px;
+     padding-top: 2px;
+}
+.secbox{
+	margin: 80px auto;
+	width: 1200px;
+	height: 800px;
+	text-align: center;
+    margin-bottom: 0px;
+}
+.box1{
+	margin: 0 auto;
+	width: 1200px;
+	height: 600px;
+	text-align: center;
+	border:solid 1px;
+}
+.box11{
+	color:#ccc;
+	position:relative;
+    top:40px;
+    left: 10px;
+	float:left;
+	width: 600px;
+}
+.box12{
+	position: relative;
+	top:40px;
+	left:20px;
+	float:left;
+	width: 560px;
+	text-align: center;
+	padding-top: 150px;
+	font-size:20px;
+	font-family:"华文仿宋";
+}
+.sence{
+	color:#eee;
+	font-size: 60px;
+	
+	font-family: "华文仿宋";
+}
+.box2{
+	margin: 0 auto;
+	width: 1200px;
+	height: 80px;
+	text-align: center;
+}
+.weibu{
+        height: 103px;
+        background-color:#323232;
+    }
+.weizhong{
+        height:103px;
+        width: 1200px;
+        margin:0 auto;
+        text-align:center;
+        padding-top:30px;
+        line-height:30px;
+        color:#fff;
+    }
+.back{
+
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-image:url("image1/雪山之巅.jpg");
+	background-repeat:repeat;
+     background-size: 100%;
+}
+.third1{
+	width: 1200px;
+	height: 600px;
+	border: solid 1px;
+	margin: 0 auto;
+}
+.th3{
+	color:#ccc;
+	position:relative;
+    top:40px;
+    left: 10px;
+	float:left;
+	width: 600px;
+}
+.th4{
+	position: relative;
+	top:40px;
+	left:20px;
+	float:left;
+	width: 560px;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 150px;
+	font-family:"华文仿宋";
+}
+.si{
+	background-color: white;
+	margin: 0 auto;
+	height: 400px;
+}
+.four{
+    float: left;
+	background-color: white;
+	height: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.four1{
+    padding-top: 130px;
+	text-align: center;
+	width:600px;
+	font-size: 20px;
+	font-family: "华文仿宋";
+	float:left;
+}
