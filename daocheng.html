@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="框架.css">
+	<script src="animate.js"></script>
+</head>
+<body>
+<form>
+	<div class="head-wrap">
+		<div class="head">
+		</div>
+	</div>
+	<div class="search-wrap">
+		<div class="search">
+			<div class="search1"><img src="images/logo1.jpg"></div>
+			<div class="search2"><input type="text" value="请输入搜索内容"></div>
+			<div class="search3"><img src="images/search.png"></div>
+		</div>
+	</div>
+	<div class="nav-wrap">
+		<div class="nav2">
+			<ul class="nav1">
+				<li><a href="#">稻城亚丁</a></li>
+				<li><a href="#">所处位置</a></li>
+				<li><a href="#">地理环境</a></li>
+				<li><a href="#">区域范围</a></li>
+				<li><a href="#">保护目标</a></li>
+				<li><a href="#">主要景点</a></li>
+				<li><a href="#">特色美食</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="box" id="box">
+		<div class="slider" id = "slider">
+			<div class="slide"><img src="images/b5.jpg"></div>
+			<div class="slide"><img src="images/b1.jpg"></div>
+			<div class="slide"><img src="images/b2.jpg"></div>
+			<div class="slide"><img src="images/b3.jpg"></div>
+			<div class="slide"><img src="images/b4.jpg"></div>
+			<div class="slide"><img src="images/b5.jpg"></div>
+			<div class="slide"><img src="images/b1.jpg"></div>
+		</div>
+		<span id="left"><</span>
+		<span id="right">></span>
+		<ul class="nav" id="nav">
+			<li class="active">&nbsp;♡</li>
+			<li>&nbsp;♡</li>
+			<li>&nbsp;♡</li>
+			<li>&nbsp;♡</li>
+			<li>&nbsp;♡</li>
+		</ul>
+	</div>
+	<div class = "location-wrap">
+		<div class="location">
+			<div class="location1">四川亚丁国家级自然保护区位于四川省甘孜藏族自治州稻城县香格里拉镇，甘孜藏族自治州南部，地处青藏高原东部，横断山脉中段，南部与云南省香格里拉毗邻，东南连泸沽湖和丽江。</div>
+			<div class="location2"><img src="images/1.png"></div>
+		</div>
+	</div>
+	<div class="time-wrap">
+		<div class="time">
+			<div class="t1">
+				♧&nbsp;&nbsp;♧&nbsp;&nbsp;♧世界那么大，一起去看看，现在已经是：♧&nbsp;&nbsp;♧&nbsp;&nbsp;♧
+			</div>
+			<div class = "t2" id="time">
+				
+			</div>
+		</div>
+	</div>
+	<div class="right-wrap">
+		<div class="right1" id="right1"><img src="images/top.png"></div>
+		<div class="right2" id="right2"><img src="images/erweima.png"></div>
+		<div class="right3" id="right3"><img src="images/collect.png"></div>
+		<div class="right4" id="right4"><img src="images/wechat1.png"></div>
+	</div>
+	<div class="end-wrap">
+		<div class="end">
+			<p>首页&nbsp;&nbsp;|&nbsp;&nbsp;工商代理&nbsp;&nbsp;|&nbsp;&nbsp;财务代记账&nbsp;&nbsp;|&nbsp;&nbsp;股权交易与变更&nbsp;&nbsp;|&nbsp;&nbsp;企业贷款&nbsp;&nbsp;|&nbsp;&nbsp;办公室租赁&nbsp;&nbsp;|&nbsp;&nbsp;社保公积金代理&nbsp;&nbsp;|&nbsp;&nbsp;法律服务</p>
+			<p>©&nbsp;2017-2019&nbsp;稻城亚丁旅游网&nbsp;版权所有</p>
+		</div>
+	</div>
+
+</form>
+<script type="text/javascript">
+	window.onload = function(){
+		var box = document.getElementById('box');
+		var oNavlist = document.getElementById('nav').children;
+		var slider = document.getElementById('slider');
+		var left = document.getElementById('left');
+		var right = document.getElementById('right');
+		var index = 1;
+		var timer;
+		var isMoving = false;
+		var right1 = document.getElementById('right1');
+		var right2 = document.getElementById('right2');
+		var right3 = document.getElementById('right3');
+		var right4 = document.getElementById('right4');
+		var time = document.getElementById('time');
+
+		//轮播下一张
+		function next(){
+			if (isMoving) {
+				return ;
+			}
+			isMoving = true;
+			index++;
+			navChange();
+			animate(slider,{left:-1200*index},function(){
+				if (index === 6) {
+					slider.style.left = "-1200px";
+					index = 1;
+				}
+				isMoving = false;
+			});		
+		}
+		//轮播上一张
+		function prev(){
+			if (isMoving) {
+				return ;
+			}
+			isMoving = true;
+			index--;
+			navChange();
+			animate(slider,{left:-1200*index},function(){
+				if (index === 0) {
+					slider.style.left = "-6000px";
+					index = 5;
+				}
+				isMoving = false;
+			});
+		}
+		var timer = setInterval(next,3000);
+		//鼠标滑过
+		box.onmouseover = function() {
+			animate(left,{opacity:50});
+			animate(right,{opacity:50});
+			clearInterval(timer);
+		}
+		//鼠标滑出
+		box.onmouseout = function() {
+			animate(left,{opacity:0});
+			animate(right,{opacity:0});
+			timer = setInterval(next,3000);
+		}
+
+		right.onclick = next;
+		left.onclick = prev;
+		
+		//按钮点击事件
+		for (var i = 0; i < oNavlist.length; i++) {
+			oNavlist[i].idx = i;
+			oNavlist[i].onclick = function(){
+				index = this.idx + 1;
+				navChange();
+				animate(slider,{left:-1200 * index})
+			}
+		}
+		//按钮背景颜色的改变
+		function navChange() {
+			for (var i = 0; i < oNavlist.length; i++) {
+				oNavlist[i].className = "";
+			}
+			if (index === 6){
+				oNavlist[0].className = "active";
+			}else if (index === 0){
+				oNavlist[4].className = "active";
+			}else{
+				oNavlist[index-1].className = "active";
+			}		
+		}
+		right1.onclick = function(){
+			window.scrollTo(0, 0); 
+		}
+		right2.onmouseover = function(){
+			right4.style.display='block';
+		}
+		right2.onmouseout = function(){
+			right4.style.display='none';
+		}
+		right3.onclick = function(){
+			alert("该页面已被收藏");			
+		}
+
+		
+		function time1(){
+			var date =  new Date();
+			year = date.getFullYear();
+			month = date.getMonth() + 1;
+			day = date.getDate();
+			hours = date.getHours();
+			minutes = date.getMinutes();
+			seconds = date.getSeconds();
+			time.innerHTML = year + "年" + month + "月" + day + "日" + "\t" + hours + ":" + minutes +":" + seconds + "\t" ;
+
+		};
+		setInterval(time1,1000);
+	}
+</script>
+</body>
+</html>
